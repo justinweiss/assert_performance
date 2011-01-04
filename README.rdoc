@@ -1,0 +1,13 @@
+= assert_performance
+
++assert_performance+ supplies test/unit assertions for verifying that
+blocks of code have certain performance characteristics. For example,
+you can write something like this in a test:
+
+  assert_performance :max_queries => 1, :max_time => 50 do
+    Person.find_by_id(1)
+  end
+
+and it will verify that the block of code only performs one
+active_record query and takes less than 50 ms.
+
